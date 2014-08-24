@@ -8,16 +8,16 @@ Result - folder 'UCI HAR Dataset' with 4 txt files and test and train data folde
 2. Overall manual looking through data, finding which files have test subjects, activities, measurements.
 Reading files into R and checking summaries (using `str`) with data types and number of columns.
 Findings:
-- File 'features.txt' - measurements names in the order of measurement columns
-- File 'activity_labels.txt' - names, codes of measured activities
-- File 'subject_test.txt' - tested subjects for test and train
-- File 'y_test.txt' - tested activities for test and train
-- File 'X_test.txt' - all the measurements (561) taken, number of measurements matching number of measurements (561) from file 'features.txt'.
+  - File 'features.txt' - measurements names in the order of measurement columns
+  - File 'activity_labels.txt' - names, codes of measured activities
+  - File 'subject_test.txt' - tested subjects for test and train
+  - File 'y_test.txt' - tested activities for test and train
+  - File 'X_test.txt' - all the measurements (561) taken, number of measurements matching number of measurements (561) from file 'features.txt'.
 
 3. Extracting necessary measurement columns in order to get only means and standard deviation for each measurement. File 'features.txt' has measurement names, so reading them into `features` variable. As features names is column 2, then getting only that one and using method `grepl` filtering out only columns with names containing required `mean()` and `std()` functions.
 As a result 2 variables to be used for data merge later:
-- `featureCols` - vector with column numbers for mean and std measurements
-- `featureColsNames` - character vector with labels for mean and std measurements.
+  - `featureCols` - vector with column numbers for mean and std measurements
+  - `featureColsNames` - character vector with labels for mean and std measurements.
 Code for those actions:
 ```{r}
 features <- read.table("UCI HAR Dataset//features.txt")
@@ -34,9 +34,9 @@ names(activities) <- c("code","label")
 ```
 
 5. Reading test data set into variables:
-- `subjectsTest` - tested subjects
-- `yTest` - tested activities codes
-- `xTest` - measurements taken
+  - `subjectsTest` - tested subjects
+  - `yTest` - tested activities codes
+  - `xTest` - measurements taken
 Code:
 ```{r}
 subjectsTest <- read.table("UCI HAR Dataset//test//subject_test.txt")
