@@ -1,7 +1,3 @@
----
-title: "CodeBook.md"
----
-
 ## Getting and Cleaning Data Course Project Code Book
 
 ### Steps performed:
@@ -20,8 +16,8 @@ Findings:
 
 3. Extracting necessary measurement columns in order to get only means and standard deviation for each measurement. File 'features.txt' has measurement names, so reading them into `features` variable. As features names is column 2, then getting only that one and using method `grepl` filtering out only columns with names containing required `mean()` and `std()` functions.
 As a result 2 variables to be used for data merge later:
-* `featureCols` - vector with column numbers for mean and std measurements
-* `featureColsNames` - character vector with labels for mean and std measurements.
+- `featureCols` - vector with column numbers for mean and std measurements
+- `featureColsNames` - character vector with labels for mean and std measurements.
 Code for those actions:
 ```{r}
 features <- read.table("UCI HAR Dataset//features.txt")
@@ -38,9 +34,9 @@ names(activities) <- c("code","label")
 ```
 
 5. Reading test data set into variables:
-* `subjectsTest` - tested subjects
-* `yTest` - tested activities codes
-* `xTest` - measurements taken
+- `subjectsTest` - tested subjects
+- `yTest` - tested activities codes
+- `xTest` - measurements taken
 Code:
 ```{r}
 subjectsTest <- read.table("UCI HAR Dataset//test//subject_test.txt")
